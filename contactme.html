@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Francesca Maggio</title>
+    <meta name="description" content="Have a project in mind? Get in touch with Francesca Maggio to discuss UX/UI design, visual communication and creative digital experiences.">
+    <meta name="author" content="Francesca Maggio">
+
+    <!-- Condivisione: prima della pubblicazione sostituire i percorsi di og:url,
+         og:image e twitter:image con gli URL HTTPS assoluti del sito. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Francesca Maggio — Portfolio">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Contact Me | Francesca Maggio">
+    <meta property="og:description" content="Have a project in mind? Get in touch with Francesca Maggio to discuss UX/UI design, visual communication and creative digital experiences.">
+    <meta property="og:url" content="contactme.html">
+    <meta property="og:image" content="assets/Img/portfolio-preview.jpg">
+    <meta property="og:image:width" content="1440">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="An ornate oval lace frame on a cream background.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Me | Francesca Maggio">
+    <meta name="twitter:description" content="Have a project in mind? Get in touch with Francesca Maggio to discuss UX/UI design, visual communication and creative digital experiences.">
+    <meta name="twitter:image" content="assets/Img/portfolio-preview.jpg">
+    <meta name="twitter:image:alt" content="An ornate oval lace frame on a cream background.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&family=Ballet&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap: prima degli stili personalizzati -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style-compilato.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+</head>
+<body>
+
+    <header class="site-header d-flex justify-content-between align-items-center">
+  <a href="index.html" class="site-logo" aria-label="Home">
+   <img src="assets/Svg/LogoCrema.svg">
+  </a>
+
+  <nav class="main-nav d-flex align-items-center" aria-label="Main navigation">
+    <a href="aboutme.html" aria-current="page">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="contactme.html">Contact Me</a>
+  </nav>
+</header>
+
+<main>
+    <section class="contact-intro">
+    <div class="contact-intro-content d-flex flex-column align-items-center text-center">
+        <h2>Let's create something meaningful.</h2>
+    </div>
+    </section>
+
+    
+<section class="contact-form-section">
+
+    <form id="contact-form" class="contact-form d-flex flex-column">
+
+        <!-- Nome -->
+        <div class="form-group d-flex flex-column">
+            <label for="full-name">Full Name</label>
+            <input
+                class="form-control"
+                type="text"
+                id="full-name"
+                name="name"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+            >
+        </div>
+
+        <!-- Email -->
+        <div class="form-group d-flex flex-column">
+            <label for="email">E-mail</label>
+            <input
+                class="form-control"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your email address"
+                autocomplete="email"
+                required
+            >
+        </div>
+
+        <!-- Messaggio -->
+        <div class="form-group d-flex flex-column">
+            <label for="message">Tell me about your project</label>
+            <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                placeholder="Write your message here..."
+                rows="6"
+                required
+            ></textarea>
+        </div>
+
+        <!-- Pulsante -->
+        <button type="submit" class="btn contact-submit">
+            Share your idea
+        </button>
+
+        <!-- Messaggio di conferma o errore -->
+        <p
+            id="form-status"
+            role="status"
+            aria-live="polite"
+        ></p>
+
+    </form>
+
+</section>
+
+
+</main>
+
+ <footer class="site-footer">
+    <div class="footer-content d-flex flex-column align-items-center">
+
+        <a href="index.html" class="footer-logo" aria-label= "Torna all'inizio">
+            <img src="assets/Svg/LogoCrema.svg" alt="Logo Francesca">
+        </a>
+
+        <div class="footer-socials d-flex justify-content-center align-items-center" aria-label="Social network">
+            <a href="https://www.behance.net/francescamaggio2" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+                <span> <img src="assets/Icone social/IconaBehance.svg"> </span>
+            </a>
+
+            <a href="www.linkedin.com/in/francescamaggio01" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <span> <img src="assets/Icone social/IconaLinkedin.svg"> </span>
+            </a>
+
+            <a href="https://www.instagram.com/stud.ioeffe/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <span> <img src="assets/Icone social/IconaInstagram.svg"> </span>
+            </a>
+
+            <a href="mailto:tuamail@example.com" aria-label="Email">
+                <span> <img src="assets/Icone social/IconaGit.svg"> </span>
+            </a>
+        </div>
+
+        <nav class="footer-navigation d-flex justify-content-center align-items-center flex-wrap" aria-label="Navigazione footer">
+            <a href="aboutme.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="contactme.html">Contact Me</a>
+        </nav>
+
+    </div>
+
+    <div class="footer-bottom d-flex justify-content-center align-items-center text-center">
+        <p> © 2026 Francesca Maggio - All rights reserved </p>
+    </div>
+</footer>  
+
+
+
+<div id="success-popup" class="success-popup" role="status" aria-live="polite">
+    <span class="popup-icon">✓</span>
+    <p>Thank you for reaching out!</p>
+    <span>Your message has been sent successfully.</span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+<script src="contact.js"></script>
+
+</body>
+</html>
