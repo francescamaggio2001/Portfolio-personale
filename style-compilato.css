@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* VARIABILI SASS */
 * {
   margin: 0;
@@ -292,9 +293,8 @@ body {
 }
 
 .footer-content {
-  min-height: 447px;
-  padding: 58px 24px 80px;
-  gap: 80px;
+  padding: 32px 24px 44px;
+  gap: 28px;
 }
 
 /* Logo */
@@ -333,6 +333,7 @@ body {
 
 /* Navigazione */
 .footer-navigation {
+  margin-top: 12px;
   gap: 40px;
 }
 .footer-navigation a {
@@ -350,13 +351,13 @@ body {
 
 /* Riga inferiore */
 .footer-bottom {
-  min-height: 65px;
-  padding: 25px 20px;
+  padding: 14px 20px;
   border-top: 1px solid #F7F1E1;
   text-align: center;
 }
 
 .footer-bottom p {
+  margin: 0;
   font-family: "Albert Sans", sans-serif;
   font-size: 10px;
   font-weight: 500;
@@ -366,9 +367,8 @@ body {
 /* Smartphone */
 @media (max-width: 600px) {
   .footer-content {
-    min-height: auto;
-    padding: 48px 20px 60px;
-    gap: 48px;
+    padding: 28px 20px 40px;
+    gap: 24px;
   }
   .footer-socials {
     gap: 24px;
@@ -383,7 +383,7 @@ body {
 /* Header */
 .site-header {
   width: 100%;
-  padding: 20px 40px;
+  padding: 10px 40px;
   box-sizing: border-box;
   background-color: #621A1A;
 }
@@ -431,7 +431,7 @@ header {
 /* Responsive */
 @media (max-width: 600px) {
   .site-header {
-    padding: 20px;
+    padding: 8px 20px;
   }
   .main-nav {
     gap: 16px;
@@ -509,10 +509,10 @@ header {
   line-height: 1.2;
   text-decoration: none;
   white-space: nowrap;
-  transition: opacity 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 .cv-button:hover {
-  opacity: 0.8;
+  background-color: #481313;
 }
 
 /* Responsive */
@@ -1087,6 +1087,89 @@ header {
   --bs-btn-disabled-color: #F7F1E1;
 }
 
+/* Stati coerenti anche quando Bootstrap applica hover, focus e active. */
+.intro-button {
+  --bs-btn-color: #621A1A;
+  --bs-btn-bg: #F7F1E1;
+  --bs-btn-hover-color: #621A1A;
+  --bs-btn-hover-bg: #DED9CB;
+  --bs-btn-hover-border-color: #DED9CB;
+  --bs-btn-active-color: #621A1A;
+  --bs-btn-active-bg: #DED9CB;
+  --bs-btn-active-border-color: #DED9CB;
+  --bs-btn-disabled-color: #621A1A;
+  --bs-btn-disabled-bg: #F7F1E1;
+  color: #621A1A;
+}
+.intro-button:hover, .intro-button:focus-visible, .intro-button:active {
+  color: #621A1A;
+  background-color: #DED9CB;
+}
+
+.projects-intro-button, .contact-cta-button {
+  --bs-btn-color: #F7F1E1;
+  --bs-btn-bg: #621A1A;
+  --bs-btn-hover-color: #F7F1E1;
+  --bs-btn-hover-bg: #7D2929;
+  --bs-btn-hover-border-color: #7D2929;
+  --bs-btn-active-color: #F7F1E1;
+  --bs-btn-active-bg: #7D2929;
+  --bs-btn-active-border-color: #7D2929;
+  --bs-btn-disabled-color: #F7F1E1;
+  --bs-btn-disabled-bg: #621A1A;
+  color: #F7F1E1;
+}
+.projects-intro-button:hover, .projects-intro-button:focus-visible, .projects-intro-button:active, .contact-cta-button:hover, .contact-cta-button:focus-visible, .contact-cta-button:active {
+  color: #F7F1E1;
+  background-color: #7D2929;
+}
+
+.cv-button {
+  --bs-btn-color: #F7F1E1;
+  --bs-btn-bg: #621A1A;
+  --bs-btn-hover-color: #F7F1E1;
+  --bs-btn-hover-bg: #481313;
+  --bs-btn-hover-border-color: #481313;
+  --bs-btn-active-color: #F7F1E1;
+  --bs-btn-active-bg: #481313;
+  --bs-btn-active-border-color: #481313;
+  --bs-btn-disabled-color: #F7F1E1;
+  --bs-btn-disabled-bg: #621A1A;
+  color: #F7F1E1;
+}
+.cv-button:hover, .cv-button:focus-visible, .cv-button:active {
+  color: #F7F1E1;
+  background-color: #481313;
+}
+
+.contact-submit {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: #621A1A;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #481313;
+  --bs-btn-hover-border-color: #481313;
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #481313;
+  --bs-btn-active-border-color: #481313;
+  --bs-btn-disabled-color: #ffffff;
+  --bs-btn-disabled-bg: #621A1A;
+  color: #ffffff;
+}
+.contact-submit:hover, .contact-submit:focus-visible, .contact-submit:active {
+  color: #ffffff;
+  background-color: #481313;
+}
+
+/* Scale è indipendente dal transform che centra il pulsante del CV. */
+.btn:not(.contact-submit) {
+  transition: scale 280ms ease, background-color 300ms ease, color 300ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .btn:not(.contact-submit):not(:disabled):not(.disabled):hover {
+    scale: 1.04;
+  }
+}
 .form-control:focus {
   background-color: transparent;
   color: #621A1A;
