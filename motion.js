@@ -7,7 +7,7 @@
 
   // Sui dispositivi touch, l'ingresso nella fascia centrale sostituisce l'hover.
   const touchFlowers = matchMedia('(hover: none), (pointer: coarse)');
-  const flowerCards = [...document.querySelectorAll('.work-card:has(.pixel-flower)')];
+  const flowerCards = [...document.querySelectorAll('.work-card[data-flower-src]')];
   let flowerObserver;
   let flowerResizeFrame;
   const observeFlowers = () => {
