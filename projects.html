@@ -31,68 +31,71 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&family=Ballet&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap: prima degli stili personalizzati -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="style-compilato.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="style.css">
     <script src="projects-flowers.js" defer></script>
+    <script src="navigation.js" defer></script>
     <script src="motion.js" defer></script>
 </head>
 
 <body>
 
-<header class="site-header d-flex justify-content-between align-items-center">
-  <a href="index.html" class="site-logo" aria-label="Home">
-   <img src="assets/Svg/LogoCrema.svg">
-  </a>
-
-  <nav class="main-nav d-flex align-items-center" aria-label="Main navigation">
-    <a href="aboutme.html" aria-current="page">About Me</a>
-    <a href="projects.html">Projects</a>
-    <a href="contactme.html">Contact Me</a>
-  </nav>
+<header class="site-header">
+    <a href="index.html" class="site-logo" aria-label="Home">
+        <img src="assets/Svg/LogoCrema.svg" alt="" width="40" height="40" decoding="async">
+    </a>
+    <button class="nav-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation menu" hidden>
+        <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="nav-toggle-label">Menu</span>
+    </button>
+    <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+        <ul class="navigation-list" role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="projects.html" aria-current="page">Projects</a></li>
+            <li><a href="contactme.html">Contact Me</a></li>
+        </ul>
+    </nav>
 </header>
 
 <main>
 
     <section class="selected-works">
-  <h2><span class="typewriter-title">Selected Works</span></h2>
+  <h1><span class="typewriter-title">Selected Works</span></h1>
   <p>
     Exploring the intersection of creativity,<br>
     design and technology.
   </p>
     </section>
 
-    <section class="works-grid row g-0">
-  <a href="assets/Pdf/Progetto di  Grafica.pdf" class="col-12 col-md-4 work-card graphic-design" data-flower-src="assets/Svg/flowers/graphic-design.svg">
+    <section class="works-grid">
+  <a href="assets/Pdf/Progetto di  Grafica.pdf" class="work-card graphic-design" data-flower-src="assets/Svg/flowers/graphic-design.svg">
     <span>Graphic Design</span>
-    <img src="assets/Icone/IconUp.svg" alt="" class="card-arrow">
+    <img src="assets/Icone/IconUp.svg" alt="" class="card-arrow" loading="lazy" width="22" height="22" decoding="async">
   </a>
 
-  <a href="assets/Pdf/Progetto Copywriting per Il Vestito Verde .pdf" class="col-12 col-md-4 work-card copywriting" data-flower-src="assets/Svg/flowers/copywriting.svg">
+  <a href="assets/Pdf/Progetto Copywriting per Il Vestito Verde .pdf" class="work-card copywriting" data-flower-src="assets/Svg/flowers/copywriting.svg">
     <span>Copywriting</span>
-    <img src="assets/Icone/IconUp.svg" alt="" class="card-arrow">
+    <img src="assets/Icone/IconUp.svg" alt="" class="card-arrow" loading="lazy" width="22" height="22" decoding="async">
   </a>
 
-  <a href="assets/Pdf/Progetto Discovery.pdf" class="col-12 col-md-4 work-card discovery" data-flower-src="assets/Svg/flowers/discovery.svg">
+  <a href="assets/Pdf/Progetto Discovery.pdf" class="work-card discovery" data-flower-src="assets/Svg/flowers/discovery.svg">
     <span>Discovery</span>
-    <img src="assets/Icone/IconUp.svg" alt="" class="card-arrow">
+    <img src="assets/Icone/IconUp.svg" alt="" class="card-arrow" loading="lazy" width="22" height="22" decoding="async">
   </a>
 
-  <a href="assets/Pdf/Progetto Accessibilità.pdf" class="col-12 col-md-4 work-card accessibility" data-flower-src="assets/Svg/flowers/accessibility.svg">
+  <a href="assets/Pdf/Progetto Accessibilità.pdf" class="work-card accessibility" data-flower-src="assets/Svg/flowers/accessibility.svg">
     <span>Accessibility</span>
-    <img src="assets/Icone/IconUp.svg" alt="" class="card-arrow">
+    <img src="assets/Icone/IconUp.svg" alt="" class="card-arrow" loading="lazy" width="22" height="22" decoding="async">
   </a>
 
-  <a href="assets/Pdf/Progetto Wireframing di Francesca Maggio.pdf" class="col-12 col-md-4 work-card wireframing" data-flower-src="assets/Svg/flowers/wireframing.svg">
+  <a href="assets/Pdf/Progetto Wireframing di Francesca Maggio.pdf" class="work-card wireframing" data-flower-src="assets/Svg/flowers/wireframing.svg">
     <span>Wireframing</span>
-    <img src="assets/Icone/IconUp.svg" alt="" class="card-arrow">
+    <img src="assets/Icone/IconUp.svg" alt="" class="card-arrow" loading="lazy" width="22" height="22" decoding="async">
   </a>
 
-  <a href="#ui-overlay" class="col-12 col-md-4 work-card user-interface" data-flower-src="assets/Svg/flowers/user-interface.svg">
+  <a href="#ui-overlay" class="work-card user-interface" data-flower-src="assets/Svg/flowers/user-interface.svg">
   <span>User Interface</span>
-  <img src="assets/Icone/IconUp.svg" alt="" class="card-arrow">
+  <img src="assets/Icone/IconUp.svg" alt="" class="card-arrow" loading="lazy" width="22" height="22" decoding="async">
     </a>
 
     </section>
@@ -100,7 +103,7 @@
     <div id="ui-overlay" class="project-overlay">
   <div class="overlay-content">
     <a href="#" class="overlay-close" aria-label="Chiudi finestra">
-      <img src="assets/Icone/IconClose.svg" alt="">
+      <img src="assets/Icone/IconClose.svg" alt="" width="22" height="22" loading="lazy" decoding="async">
     </a>
 
     <h2>Work in progress</h2>
@@ -111,41 +114,43 @@
 </main>
 
  <footer class="site-footer">
-    <div class="footer-content d-flex flex-column align-items-center">
+    <div class="footer-content">
 
         <a href="index.html" class="footer-logo" aria-label="Torna all'inizio">
-            <img src="assets/Svg/LogoCrema.svg" alt="Francesca">
+            <img src="assets/Svg/LogoCrema.svg" alt="Francesca" width="40" height="40" loading="lazy" decoding="async">
         </a>
 
-        <div class="footer-socials d-flex justify-content-center align-items-center" aria-label="Social network">
+        <div class="footer-socials" aria-label="Social network">
             <a href="https://www.behance.net/francescamaggio2" aria-label="Behance" target="_blank" rel="noopener noreferrer">
-                <span> <img src="assets/Icone social/IconaBehance.svg"> </span>
+                <span> <img src="assets/Icone social/IconaBehance.svg" width="40" height="40" alt="" loading="lazy" decoding="async"> </span>
             </a>
 
             <a href="https://www.linkedin.com/in/francescamaggio01/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                <span> <img src="assets/Icone social/IconaLinkedin.svg"> </span>
+                <span> <img src="assets/Icone social/IconaLinkedin.svg" width="40" height="40" alt="" loading="lazy" decoding="async"> </span>
             </a>
 
             <a href="https://www.instagram.com/stud.ioeffe/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                <span> <img src="assets/Icone social/IconaInstagram.svg"> </span>
+                <span> <img src="assets/Icone social/IconaInstagram.svg" width="40" height="40" alt="" loading="lazy" decoding="async"> </span>
             </a>
 
             <a href="https://github.com/francescamaggio2001" aria-label="GitHub">
-                <span> <img src="assets/Icone social/IconaGit.svg"> </span>
+                <span> <img src="assets/Icone social/IconaGit.svg" width="40" height="40" alt="" loading="lazy" decoding="async"> </span>
             </a>
         </div>
 
-        <nav class="footer-navigation d-flex justify-content-center align-items-center flex-wrap" aria-label="Navigazione footer">
-            <a href="aboutme.html">About Me</a>
-            <a href="projects.html">Projects</a>
-            <a href="contactme.html">Contact Me</a>
+        <nav class="footer-navigation" aria-label="Navigazione footer">
+            <ul class="navigation-list" role="list">
+                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="contactme.html">Contact Me</a></li>
+            </ul>
         </nav>
 
     </div>
 
-    <div class="footer-bottom d-flex justify-content-center align-items-center text-center">
+    <div class="footer-bottom">
         <p> © 2026 Francesca Maggio - All rights reserved </p>
     </div>
-</footer>   
+</footer>
 </body>
 </html>

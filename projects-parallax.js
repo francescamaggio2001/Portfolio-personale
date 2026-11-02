@@ -20,13 +20,28 @@
     layers[3].style.transform = `translate3d(0, ${remaining * 5}%, 0) scale(${1 + remaining * 0.2}) rotate(${remaining * -4}deg)`;
   };
   const schedule = () => { if (!frame) frame = requestAnimationFrame(render); };
-  Promise.all(layers.map(image => image.decode())).then(() => {
-    ready = true;
-    render();
-    section.classList.add('art-ready');
-    addEventListener('scroll', schedule, { passive: true });
-    addEventListener('resize', schedule);
-    addEventListener('pageshow', schedule);
-    reduced.addEventListener('change', schedule);
-  }).catch(() => { /* Il JPG rimane visibile se un livello non si carica. */ });
+  // La decodifica parte solo quando il collage si avvicina allo schermo.
+  const loadLayers = () => {
+    layers.forEach(image => { image.loading = 'eager'; });
+    return Promise.all(layers.map(image => image.decode())).then(() => {
+      ready = true;
+      render();
+      section.classList.add('art-ready');
+      addEventListener('scroll', schedule, { passive: true });
+      addEventListener('resize', schedule);
+      addEventListener('pageshow', schedule);
+      reduced.addEventListener('change', schedule);
+    }).catch(() => { /* L'immagine WebP statica resta visibile se un livello non si carica. */ });
+  };
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        observer.disconnect();
+        loadLayers();
+      }
+    }, { rootMargin: '200px' });
+    observer.observe(section);
+  } else {
+    loadLayers();
+  }
 })();

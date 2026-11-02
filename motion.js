@@ -63,9 +63,6 @@
     play(document.querySelector('.hero-subtitle'), fade, {
       duration: 1200, delay: 1450, easing: 'ease-out'
     });
-    document.querySelectorAll('.hero-navigation a').forEach((link, index) => {
-      play(link, fade, { duration: 900, delay: 650 + index * 180, easing: 'ease-out' });
-    });
   }
 
   const writeTitle = (element, delay = 0) => {
