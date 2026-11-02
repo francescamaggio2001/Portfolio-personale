@@ -516,6 +516,11 @@ header {
 }
 .main-nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
 
+/* Home rimane nel menu compatto; su desktop si torna alla home dal logo. */
+@media (min-width: $breakpoint-tablet + 1px) {
+  .main-nav .navigation-home { display: none; }
+}
+
 @media (max-width: $breakpoint-tablet) {
   .hero-logo { display: none; }
   .site-header { padding: 8px 20px; flex-wrap: wrap; }

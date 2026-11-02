@@ -52,7 +52,11 @@
     const focusWasOnButton = document.activeElement === button;
     button.hidden = !mobile.matches;
     setOpen(false, focusWillHide, false);
-    if (!mobile.matches && focusWasOnButton) nav.querySelector('a[aria-current="page"]')?.focus();
+    if (!mobile.matches && focusWasOnButton) {
+      const currentLink = nav.querySelector('a[aria-current="page"]');
+      const target = currentLink?.getClientRects().length ? currentLink : header.querySelector('.site-logo');
+      target?.focus();
+    }
   };
 
   header.classList.add('navigation-ready');
