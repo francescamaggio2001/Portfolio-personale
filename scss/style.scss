@@ -825,108 +825,180 @@ header {
 }
 
 .works-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  display: inline-flex;
+  width: 100%;
+  padding: 24px 70px 92px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: var(--color-cream);
 }
 
-@media (min-width: $breakpoint-tablet) {
-  .works-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.works-grid-columns {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.works-column {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .work-card {
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  aspect-ratio: 720 / 400;
-  box-sizing: border-box;
-  padding: 24px;
+  width: 100%;
+  min-height: 160px;
+  aspect-ratio: 630 / 400;
+  padding: 18px 20px;
+  border-radius: 4px;
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
-  align-items: flex-end;
-  gap: 12px;
-  color: var(--color-burgundy);
+  color: var(--color-cream);
   text-decoration: none;
+  background-color: var(--color-burgundy);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   font-family: var(--font-main);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
+  line-height: 1.2;
+  transition: scale 800ms ease;
 
-  &:hover .card-arrow {
+  &--tall {
+    aspect-ratio: 630 / 920;
+  }
+
+  &--interface {
+    aspect-ratio: 630 / 824;
+    // Compensa il gap fisso tra le card anche quando le colonne si restringono.
+    flex-grow: 1;
+  }
+
+  &--dark {
+    color: var(--color-burgundy);
+    background-color: var(--color-cream-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-burgundy);
+    outline-offset: 4px;
+  }
+}
+
+.work-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.work-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.work-card-tag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1px solid currentColor;
+  border-radius: 40px;
+}
+
+.card-arrow {
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .work-card:hover {
+    scale: 1.02;
+  }
+
+  .work-card:hover .card-arrow {
     transform: translate(3px, -3px);
   }
 }
 
-/* I pixel mantengono le posizioni originali a riposo. */
-.work-card:has(.pixel-flower) {
-  background-image: none;
-}
-
-.pixel-flower {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.pixel-flower rect {
-  transition: transform 1800ms cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .work-card.flower-in-view .pixel-flower rect {
-    transform: translate(var(--pixel-x), var(--pixel-y));
-    transition-duration: 2200ms;
-  }
-}
-
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .work-card:hover .pixel-flower rect {
-    transform: translate(var(--pixel-x), var(--pixel-y));
-    transition-duration: 2200ms;
-  }
-}
-
-.card-arrow {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
-}
-
+/* Immagini delle card: i percorsi sono relativi a style.css.
+   Ordine: prima la colonna sinistra dall'alto, poi la colonna destra. */
 .graphic-design {
-  background-image: url(assets/Progects/1.svg);
+  background-image: url("assets/Projects/Sunnee.jpg");
 }
 
-.copywriting {
-  background-image: url("assets/Progects/2.svg");
-}
-
-.discovery {
-  background-image: url("assets/Progects/3.svg");
-}
-
-.accessibility {
-  background-image: url("assets/Progects/4.svg");
+.brand-identity {
+  background-image: url("assets/Projects/Nova.jpg");
 }
 
 .wireframing {
-  background-image: url("assets/Progects/5.svg");
+  background-image: url("assets/Projects/Wireframing.jpg");
+}
+
+.accessibility {
+  background-image: url("assets/Projects/Accessibilità.jpg");
+}
+
+.discovery {
+  background-image: url("assets/Projects/Discovery.jpg");
+}
+
+.brand-packaging {
+  background-image: url("assets/Projects/San Basilio.jpg");
+}
+
+.packaging-design {
+  background-image: url("assets/Projects/Tilde.jpg");
+}
+
+.copywriting {
+  background-image: url("assets/Projects/Copywriting.jpg");
 }
 
 .user-interface {
-  background-image: url("assets/Progects/6.svg");
+  background-image: url("assets/Projects/User Interface.jpg?v=8d31179e0f90");
 }
 
-/* Responsive */
+/* Due colonne su tablet, una colonna su smartphone. */
 @media (max-width: $breakpoint-tablet) {
+  .works-grid {
+    padding: 24px 24px 64px;
+  }
+
   .work-card {
-    padding: 20px;
-    font-size: 14px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .works-grid {
+    padding: 16px 20px 48px;
+  }
+
+  .works-grid-columns {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .works-column {
+    flex: auto;
+    width: 100%;
   }
 }
 
