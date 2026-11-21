@@ -876,6 +876,13 @@ header {
     aspect-ratio: 630 / 920;
   }
 
+  &--wide {
+    max-width: 1280px;
+    height: clamp(160px, 22vw, 280px);
+    margin-top: 24px;
+    aspect-ratio: auto;
+  }
+
   &--interface {
     aspect-ratio: 630 / 824;
     // Compensa il gap fisso tra le card anche quando le colonne si restringono.
@@ -973,6 +980,10 @@ header {
 
 .user-interface {
   background-image: url("assets/Projects/User Interface.jpg?v=8d31179e0f90");
+}
+
+.ai-agents {
+  background-image: url("assets/Projects/Agenti.jpg");
 }
 
 /* Due colonne su tablet, una colonna su smartphone. */
